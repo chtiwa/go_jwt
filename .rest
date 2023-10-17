@@ -1,0 +1,18 @@
+POST http://localhost:5000/validate
+Set-Cookie: refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAxNTY1OTksInN1YiI6MX0.rPcrLti-JYQuQAbcPM_JaWWNRlQzJnHAu0KsN2E-7I0;
+
+# POST http://localhost:5000/login
+# Content-Type: application/json
+
+# {
+#     "Email":"chtiwa@gmail.com",
+#     "password":"chtiwa"
+# }
+
+# POST http://localhost:5000/signup
+# Content-Type: application/json
+
+# {
+#     "Email":"chtiwa@gmail.com",
+#     "password":"chtiwa"
+# }

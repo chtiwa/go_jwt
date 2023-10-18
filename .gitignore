@@ -1,5 +1,6 @@
 *.rest
 
+*.env
 *.exe
 *.exe~
 *.dll

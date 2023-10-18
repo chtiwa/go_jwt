@@ -1,3 +1,4 @@
 .env
 go_jwt.exe
 go_jwt.exe~
+.rest

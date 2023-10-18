@@ -103,45 +103,18 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	// send the cookie (10 days)
+	// send the cookie (30 days)
 	c.SetSameSite(http.SameSiteNoneMode)
-	c.SetCookie("refresh_token", tokenString, 100*60*60*24*10, "", "", false, true)
+	c.SetCookie("refresh_token", tokenString, 3600*24*30, "", "", false, true)
 	c.JSON(http.StatusOK, gin.H{
 		"message": "success",
 	})
 }
 
 func Validate(c *gin.Context) {
-	// sample token string taken from the New example
-	tokenString, err := c.Cookie("refresh_token")
-	if err != nil {
-		c.JSON(http.StatusUnauthorized, gin.H{
-			"error": "Aunauthorized access!",
-		})
-	}
-	// Parse takes the token string and a function for looking up the key. The latter is especially
-	// useful if you use multiple keys for your application.  The standard is to use 'kid' in the
-	// head of the token to identify which key to use, but the parsed token (head and claims) is provided
-	// to the callback, providing flexibility.
-	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
-		// Don't forget to validate the alg is what you expect:
-		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-			return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
-		}
+	user, _ := c.Get("user")
 
-		// hmacSampleSecret is a []byte containing your secret, e.g. []byte("my_secret_key")
-		return []byte(os.Getenv("JWT_SECRET")), nil
+	c.JSON(http.StatusOK, gin.H{
+		"user": user,
 	})
-
-	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-		fmt.Println(claims["foo"], claims["nbf"])
-		c.JSON(http.StatusOK, gin.H{
-			"sub": claims["sub"],
-			"exp": claims["exp"],
-		})
-	} else {
-		c.JSON(http.StatusUnauthorized, gin.H{
-			"error": err,
-		})
-	}
 }

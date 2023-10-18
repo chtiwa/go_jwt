@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/chtiwa/go_jwt/controllers"
 	"github.com/chtiwa/go_jwt/initializers"
+	"github.com/chtiwa/go_jwt/middleware"
 	"github.com/gin-gonic/gin"
 )
 
@@ -17,7 +18,7 @@ func main() {
 
 	r.POST("/signup", controllers.Signup)
 	r.POST("/login", controllers.Login)
-	r.POST("/validate", controllers.Validate)
+	r.POST("/validate", middleware.RequireAuth, controllers.Validate)
 
 	r.Run()
 }

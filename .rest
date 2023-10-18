@@ -1,5 +1,5 @@
 POST http://localhost:5000/validate
-Cookie: refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAxNjcyMDQsInN1YiI6MX0.VfiPYVg7g9tO6mqgjkubFm8uuU-Y0mujfgB_T8GgRr0;
+Cookie: refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDAyMzQzNjMsInN1YiI6MX0.s9otJ38CgxJRy1GrHFskRR3wZGCE8spY1kN3Y3xlnFs;
 
 # POST http://localhost:5000/login
 # Content-Type: application/json

@@ -1,20 +1,101 @@
-*.rest
+# Compiled Object files, Static and Dynamic libraries (Shared Objects)
+*.o
+*.a
+*.so
 
-*.env
+# Output of the go install command
+/bin/
+/pkg/
+/test/
+# Previous versions of the compiled binary
+/_obj/
+/_test/
+/_testmain.go
+
+# Output of the go get command
+/src/
+
+# Dependency directories (Glide, Godep, Vgo, Dep, etc)
+/vendor/
+/Godeps/
+/.glide/
+/.godep/
+/.vgo/
+
+# Output of `go tool cover`
+*.out
+
+# Output of `go tool trace`
+trace.out
+
+# Output of `go tool pprof`
+*.pprof
+
+# Output of `go test -c`
+*.test
+
+# Output of `go tool cgo`
+_pie/
+
+# Compiled Output
 *.exe
-*.exe~
+*.test
+*.prof
+
+# Compiled Go binary
+main
+
+# End of Visual Studio Code project files
+.vscode/
+
+# End of GoLand project files
+.idea/
+
+# JetBrains
+# .idea/
+
+# Sublime Text files
+.sublime-workspace
+.sublime-project
+
+# macOS
+.DS_Store
+
+# vim swap files
+*.swp
+
+# Binary files
 *.dll
 *.so
 *.dylib
 
-# Test binary, built with `go test -c`
-*.test
+# Log files
+*.log
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+# Environment variables file
+.env
 
-# Dependency directories (remove the comment below to include it)
-vendor/
+# API key files
+*.key
 
-# Go workspace file
-go.work
+# Webpack build files
+/dist/
+
+# Node modules
+/node_modules/
+
+# The file to store your application configuration
+config.yaml
+config.toml
+
+# Generated file
+swagger.json
+
+# Visual Studio Code settings
+.vscode/
+
+# GoLand settings
+.idea/
+
+# Compiled binary
+bin/

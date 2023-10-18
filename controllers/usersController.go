@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"net/http"
 	"os"
 	"time"
@@ -67,7 +66,7 @@ func Login(c *gin.Context) {
 	var user models.User
 
 	initializers.DB.First(&user, "email = ? ", body.Email)
-	fmt.Println(user)
+	// fmt.Println(user)
 
 	if user.ID == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{
